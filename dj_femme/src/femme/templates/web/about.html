@@ -1,0 +1,29 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% block content %}
+
+    <section id="about">
+        <section class="wrapper">
+            {% if about_instances %}
+                <ul>
+                    {% for about in about_instances %}
+                        <li>
+                            <div class="top">
+                                <div class="img">
+                                    <img src="{{ about.image.url }}" alt="" title="">
+                                </div>
+                            </div>
+                            <div class="bottom">
+                                <h3>{{ about.title }}</h3>
+                                <p>{{ about.content }}</p>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+                <br class="clear">
+            {% else %}
+                <p>No data found!</p>
+            {% endif %}
+        </section>
+    </section>
+{% endblock %}

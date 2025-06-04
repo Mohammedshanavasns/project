@@ -1,0 +1,37 @@
+version: "3.8"
+services:
+    # @FEMME-SERVICES
+    femme-services:
+        container_name: femme-services
+        image: dev4technostore360/dev4development:femme_v1.1.6
+        user: 1001:1001
+        restart: on-failure
+        expose:
+            - "8000"
+        command: sh -c "gunicorn femme.wsgi:application -c /etc/certs/gunicorn_config.py"
+        environment:
+            - LIVE_DB_NAME=db_name
+            - LIVE_DB_USER=username
+            - LIVE_DB_PASSWORD=password
+            - LIVE_DB_HOST=172.17.0.1
+            - LIVE_DB_PORT=5432
+        volumes:
+            - ./gunicorn_config.py:/etc/certs/gunicorn_config.py
+        networks:
+            femme_development:
+                ipv4_address: 172.22.0.2
+# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+# @VOLUMES
+volumes:
+    femme_logs: {}
+    femme_media: {}
+    femme_static: {}
+# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+# @NETWORKS
+networks:
+    femme_development:
+        driver: bridge
+        ipam:
+            driver: default
+            config:
+                - subnet: 172.22.0.0/16

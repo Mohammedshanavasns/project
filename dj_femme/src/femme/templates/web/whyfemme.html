@@ -1,0 +1,29 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% block content %}
+
+    <section id="whyfemme">
+        <section class="wrapper">
+            {% if whyfemme_instances %}
+                <ul>
+                    {% for whyfemme in whyfemme_instances %}
+                        <li>
+                            <div class="top">
+                                <div class="img">
+                                    <img src="{{ whyfemme.image.url }}" alt="" title="">
+                                </div>
+                            </div>
+                            <div class="bottom">
+                                <h3>{{ whyfemme.title }}</h3>
+                                <p>{{ whyfemme.content }}</p>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+                <br class="clear">
+            {% else %}
+                <p>No data found!</p>
+            {% endif %}
+        </section>
+    </section>
+{% endblock %}

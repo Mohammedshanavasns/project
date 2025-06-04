@@ -1,0 +1,663 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% block content %}
+    <section id="about">
+        <section class="wrapper">
+            {% if about_instances %}
+                <ul>
+                    {% for about in about_instances %}
+                        <li>
+                            <div class="top">
+                                <div class="img">
+                                    <img src="{{ about.image.url }}" alt="" title="">
+                                </div>
+                            </div>
+                            <div class="bottom">
+                                <h3>{{ about.title }}</h3>
+                                <p>{{ about.content }}</p>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+                <br class="clear">
+            {% else %}
+                <p>No data found!</p>
+            {% endif %}
+        </section>
+    </section>
+
+    <section id="issues">
+        <section class="wrapper">
+            <div class="head">
+                <h3>Issues </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam asperiores tenetur aliquid sit repellat, dolores eius quasi possimus ipsum explicabo cumque. Explicabo exercitationem dignissimos asperiores unde et est, expedita numquam?</p>
+            </div>
+            {% if issue_instances %}
+                <ul>
+                    {% for issue in issue_instances %}
+                    <li>
+                        <span><small>
+                            <img src="{{ issue.image.url }}" alt="" style="width: 72px; height: 72px;" /></small></span>
+                        <h4>{{ issue.title }}</h4>
+                        <p>{{ issue.content }}</p>
+                    </li>
+                    {% endfor %}
+                </ul>
+                    <br class="clear">
+                {% else %}
+                    <p>No data found!</p>
+                {% endif %}
+        </section>
+    </section>
+
+    <section id="whyfemme">
+        <section class="wrapper">
+            <div class="head white">
+                <h3>Why Femme</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quidem mollitia voluptate expedita rem, facilis eveniet temporibus necessitatibus accusantium, perspiciatis alias, quasi sed animi! Ex nisi placeat iste perspiciatis doloremque!</p>
+            </div>
+            {% if whyfemme_instances %}
+                <ul>
+                    {% for whyfemme in whyfemme_instances %}
+                    <li>
+                        <small><span>
+                            <img src="{{ whyfemme.image.url }}" alt="" style="width: 72px; height: 72px;" /></small></span>
+                        <h4>{{ whyfemme.title }}</h4>
+                        <p>{{ whyfemme.content }}</p>
+                    </li>
+                    {% endfor %}
+                </ul>
+                    <br class="clear">
+                {% else %}
+                    <p>No data found!</p>
+                {% endif %}
+        </section>
+    </section>
+
+     <section id="text">
+        <section class="wrapper">
+            <div class="head white">
+                <h3>text</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quidem mollitia voluptate expedita rem, facilis eveniet temporibus necessitatibus accusantium, perspiciatis alias, quasi sed animi! Ex nisi placeat iste perspiciatis doloremque!</p>
+            </div>
+            {% if text_instances %}
+                <ul>
+                    {% for text in text_instances %}
+                    <li>
+                        <small><span>
+                            <img src="{{ text.image.url }}" alt="" style="width: 72px; height: 72px;" /></small></span>
+                        <h4>{{ text.title }}</h4>
+                        <p>{{ text.content }}</p>
+                    </li>
+                    {% endfor %}
+                </ul>
+                    <br class="clear">
+                {% else %}
+                    <p>No data found!</p>
+                {% endif %}
+        </section>
+    </section>
+
+{#    #############################################################################}
+    <section id="whyfemme">
+        <section class="wrapper">
+            <div class="head white">
+                <h3>Why Femme</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quidem mollitia voluptate expedita rem, facilis eveniet temporibus necessitatibus accusantium, perspiciatis alias, quasi sed animi! Ex nisi placeat iste perspiciatis doloremque!</p>
+            </div>
+            <div class="circle-container">
+                <img src="{% static 'images/why-femme.png' %}" alt="">
+                {% if whyfemme_instances %}
+                    {% for whyfemme in whyfemme_instances %}
+                        <div class="row first">
+                            <div class="box one">
+                                <img class="icon" src="{{ whyfemme.image.url }}" alt="" style="width: 140px; height: 140px; display: inline-block; border-radius: 50%;" />
+                                <h4>{{ whyfemme.title }}</h4>
+                            </div>
+                            <div class="box two">
+                                <span class="icon">&nbsp;</span>
+                                <h4>Social <br> awareness</h4>
+                            </div>
+                            <br class="clear" />
+                        </div>
+{#                        <div class="row second">#}
+{#                            <div class="box one">#}
+{#                                <span class="icon">&nbsp;</span>#}
+{#                                <h4>Young <br> entrepreneur girls</h4>#}
+{#                            </div>#}
+{#                            <div class="box two">#}
+{#                                <span class="icon">&nbsp;</span>#}
+{#                                <h4>Freedom <br> is not a word</h4>#}
+{#                            </div>#}
+{#                            <br class="clear" />#}
+{#                        </div>#}
+{#                        <div class="row third">#}
+{#                            <div class="box one">#}
+{#                                <span class="icon">&nbsp;</span>#}
+{#                                <h4>Technology <br> everywhere</h4>#}
+{#                            </div>#}
+{#                            <div class="box two">#}
+{#                                <span class="icon">&nbsp;</span>#}
+{#                                <h4>Strong <br> families</h4>#}
+{#                            </div>#}
+{#                            <br class="clear" />#}
+{#                        </div>#}
+{#                        <div class="row fourth">#}
+{#                            <div class="box one">#}
+{#                                <span class="icon">&nbsp;</span>#}
+{#                                <h4>Fearless <br> girls & women</h4>#}
+{#                            </div>#}
+{#                            <div class="box two">#}
+{#                                <span class="icon">&nbsp;</span>#}
+{#                                <h4>The women <br> empowerment</h4>#}
+{#                            </div>#}
+{#                            <br class="clear" />#}
+{#                        </div>#}
+                    {% endfor %}
+                {% endif %}
+                <br class="clear">
+            </div>
+        </section>
+    </section>
+{####################################################################}
+
+    <section id="features">
+        <section class="wrapper">
+            <div class="head">
+                <h3>Our Features</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam asperiores tenetur aliquid sit repellat, dolores eius quasi possimus ipsum explicabo cumque. Explicabo exercitationem dignissimos asperiores unde et est, expedita numquam?</p>
+            </div>
+            <div class="left">
+                <ul>
+                    <li>
+                        <span><small><b class="icon icon1">&nbsp;</b></small></span>
+                        <div class="content">
+                            <h4>Innovative mission</h4>
+                        </div>
+                    </li>
+                    <li>
+                        <span><small><b class="icon icon2">&nbsp;</b></small></span>
+                        <div class="content">
+                            <h4>24*7 Service</h4>
+                        </div>
+                    </li>
+                    <li>
+                        <span><small><b class="icon icon3">&nbsp;</b></small></span>
+                        <div class="content">
+                            <h4>Business opportunities</h4>
+                        </div>
+                    </li>
+                    <li>
+                        <span><small><b class="icon icon4">&nbsp;</b></small></span>
+                        <div class="content">
+                            <h4>Strong charity wing</h4>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="right">
+                <ul>
+                    <li>
+                        <span><small><b class="icon icon5">&nbsp;</b></small></span>
+                        <div class="content">
+                            <h4>Talented team</h4>
+                        </div>
+                    </li>
+                    <li>
+                        <span><small><b class="icon icon6">&nbsp;</b></small></span>
+                        <div class="content">
+                            <h4>Participating everyone</h4>
+                        </div>
+                    </li>
+                    <li>
+                        <span><small><b class="icon icon7">&nbsp;</b></small></span>
+                        <div class="content">
+                            <h4>Profitable entities</h4>
+                        </div>
+                    </li>
+                    <li>
+                        <span><small><b class="icon icon8">&nbsp;</b></small></span>
+                        <div class="content">
+                            <h4>Technical support</h4>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <br class="clear">
+        </section>
+    </section>
+
+    <section id="departments">
+        <section class="wrapper">
+            <div class="head white">
+                <h3>Femme's Departments</h3>
+            </div>
+            <ul id="accordion">
+                <li class="active one">
+                    <div class="top">
+                        <div class="designs">
+                            <div class="design-left">
+                                <span class="d1 d">&nbsp;</span>
+                                <span class="d2 d">&nbsp;</span>
+                                <span class="d3 d">&nbsp;</span>
+                                <br class="clear" />
+                            </div>
+                            <div class="design-right">
+                                <span class="d1 d">&nbsp;</span>
+                                <span class="d2 d">&nbsp;</span>
+                                <span class="d3 d">&nbsp;</span>
+                                <span class="d4 d">&nbsp;</span>
+                                <br class="clear" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content onebythree">
+                        <div>
+                            <img src="{% static 'images/technewbie.png' %}" title="" alt="" />
+                            <h5>TechNewbie</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, rem, itaque, doloremque laboriosam aliquam fuga corporis optio suscipit sequi qui fugiat alias repudiandae maiores labore temporibus aut ex rerum perferendis!</p>
+                        </div>
+                        <div>
+                            <img src="{% static 'images/ykipp.png' %}" title="" alt="" />
+                            <h5>TechNewbie</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, rem, itaque, doloremque laboriosam aliquam fuga corporis optio suscipit sequi qui fugiat alias repudiandae maiores labore temporibus aut ex rerum perferendis!</p>
+                        </div>
+                        <div>
+                            <img src="{% static 'images/askid.png' %}" title="" alt="" />
+                            <h5>TechNewbie</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, rem, itaque, doloremque laboriosam aliquam fuga corporis optio suscipit sequi qui fugiat alias repudiandae maiores labore temporibus aut ex rerum perferendis!</p>
+                        </div>
+                        <br class="clear">
+                    </div>
+                    <div class="bottom">
+                        <h4 class="active"><b><small class="one">&nbsp;</small></b>Educations<span><small>&nbsp;</small></span></h4>
+                        <div class="designs">
+                            <div class="design-left">
+                                <span class="d1 d">&nbsp;</span>
+                                <span class="d2 d">&nbsp;</span>
+                                <span class="d3 d">&nbsp;</span>
+                                <br class="clear" />
+                            </div>
+                            <div class="design-right">
+                                <span class="d1 d">&nbsp;</span>
+                                <span class="d2 d">&nbsp;</span>
+                                <span class="d3 d">&nbsp;</span>
+                                <span class="d4 d">&nbsp;</span>
+                                <br class="clear" />
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="two">
+                    <div class="top">
+                        <div class="designs">
+                            <div class="design-left">
+                                <span class="d1 d">&nbsp;</span>
+                                <span class="d2 d">&nbsp;</span>
+                                <span class="d3 d">&nbsp;</span>
+                                <br class="clear" />
+                            </div>
+                            <div class="design-right">
+                                <span class="d1 d">&nbsp;</span>
+                                <span class="d2 d">&nbsp;</span>
+                                <span class="d3 d">&nbsp;</span>
+                                <span class="d4 d">&nbsp;</span>
+                                <br class="clear" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content onebyfour">
+                        <div>
+                            <span class="icon"><small class="icon one">&nbsp;</small></span>
+                            <h5>TechNewbie</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, rem, itaque, doloremque laboriosam aliquam fuga corporis optio suscipit sequi qui fugiat alias repudiandae maiores labore temporibus aut ex rerum perferendis!</p>
+                        </div>
+                        <div>
+                            <span class="icon"><small class="icon two">&nbsp;</small></span>
+                            <h5>TechNewbie</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, rem, itaque, doloremque laboriosam aliquam fuga corporis optio suscipit sequi qui fugiat alias repudiandae maiores labore temporibus aut ex rerum perferendis!</p>
+                        </div>
+                        <div>
+                            <span class="icon"><small class="icon three">&nbsp;</small></span>
+                            <h5>TechNewbie</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, rem, itaque, doloremque laboriosam aliquam fuga corporis optio suscipit sequi qui fugiat alias repudiandae maiores labore temporibus aut ex rerum perferendis!</p>
+                        </div>
+                        <div>
+                            <span class="icon"><small class="icon four">&nbsp;</small></span>
+                            <h5>TechNewbie</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, rem, itaque, doloremque laboriosam aliquam fuga corporis optio suscipit sequi qui fugiat alias repudiandae maiores labore temporibus aut ex rerum perferendis!</p>
+                        </div>
+                        <br class="clear">
+                    </div>
+                    <div class="bottom">
+                        <h4><b><small class="two">&nbsp;</small></b>Traders<span><small>&nbsp;</small></span></h4>
+                        <div class="designs">
+                            <div class="design-left">
+                                <span class="d1 d">&nbsp;</span>
+                                <span class="d2 d">&nbsp;</span>
+                                <span class="d3 d">&nbsp;</span>
+                                <br class="clear" />
+                            </div>
+                            <div class="design-right">
+                                <span class="d1 d">&nbsp;</span>
+                                <span class="d2 d">&nbsp;</span>
+                                <span class="d3 d">&nbsp;</span>
+                                <span class="d4 d">&nbsp;</span>
+                                <br class="clear" />
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="three">
+                    <div class="top">
+                        <div class="designs">
+                            <div class="design-left">
+                                <span class="d1 d">&nbsp;</span>
+                                <span class="d2 d">&nbsp;</span>
+                                <span class="d3 d">&nbsp;</span>
+                                <br class="clear" />
+                            </div>
+                            <div class="design-right">
+                                <span class="d1 d">&nbsp;</span>
+                                <span class="d2 d">&nbsp;</span>
+                                <span class="d3 d">&nbsp;</span>
+                                <span class="d4 d">&nbsp;</span>
+                                <br class="clear" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content onebythree">
+                        <div>
+                            <small class="icon one">&nbsp;</small>
+                            <h5>TechNewbie</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, rem, itaque, doloremque laboriosam aliquam fuga corporis optio suscipit sequi qui fugiat alias repudiandae maiores labore temporibus aut ex rerum perferendis!</p>
+                        </div>
+                        <div>
+                            <small class="icon two">&nbsp;</small>
+                            <h5>TechNewbie</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, rem, itaque, doloremque laboriosam aliquam fuga corporis optio suscipit sequi qui fugiat alias repudiandae maiores labore temporibus aut ex rerum perferendis!</p>
+                        </div>
+                        <div>
+                            <small class="icon three">&nbsp;</small>
+                            <h5>TechNewbie</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, rem, itaque, doloremque laboriosam aliquam fuga corporis optio suscipit sequi qui fugiat alias repudiandae maiores labore temporibus aut ex rerum perferendis!</p>
+                        </div>
+                        <div>
+                            <small class="icon four">&nbsp;</small>
+                            <h5>TechNewbie</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, rem, itaque, doloremque laboriosam aliquam fuga corporis optio suscipit sequi qui fugiat alias repudiandae maiores labore temporibus aut ex rerum perferendis!</p>
+                        </div>
+                        <div>
+                            <small class="icon five">&nbsp;</small>
+                            <h5>TechNewbie</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, rem, itaque, doloremque laboriosam aliquam fuga corporis optio suscipit sequi qui fugiat alias repudiandae maiores labore temporibus aut ex rerum perferendis!</p>
+                        </div>
+                        <div>
+                            <small class="icon six">&nbsp;</small>
+                            <h5>TechNewbie</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, rem, itaque, doloremque laboriosam aliquam fuga corporis optio suscipit sequi qui fugiat alias repudiandae maiores labore temporibus aut ex rerum perferendis!</p>
+                        </div>
+                        <br class="clear">
+                    </div>
+                    <div class="bottom">
+                        <h4><b><small class="three">&nbsp;</small></b>Technologies<span><small>&nbsp;</small></span></h4>
+                        <div class="designs">
+                            <div class="design-left">
+                                <span class="d1 d">&nbsp;</span>
+                                <span class="d2 d">&nbsp;</span>
+                                <span class="d3 d">&nbsp;</span>
+                                <br class="clear" />
+                            </div>
+                            <div class="design-right">
+                                <span class="d1 d">&nbsp;</span>
+                                <span class="d2 d">&nbsp;</span>
+                                <span class="d3 d">&nbsp;</span>
+                                <span class="d4 d">&nbsp;</span>
+                                <br class="clear" />
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="four">
+                    <div class="top">
+                        <div class="designs">
+                            <div class="design-left">
+                                <span class="d1 d">&nbsp;</span>
+                                <span class="d2 d">&nbsp;</span>
+                                <span class="d3 d">&nbsp;</span>
+                                <br class="clear" />
+                            </div>
+                            <div class="design-right">
+                                <span class="d1 d">&nbsp;</span>
+                                <span class="d2 d">&nbsp;</span>
+                                <span class="d3 d">&nbsp;</span>
+                                <span class="d4 d">&nbsp;</span>
+                                <br class="clear" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content onebythree">
+                        <div>
+                            <small class="icon one">&nbsp;</small>
+                            <h5>TechNewbie</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, rem, itaque, doloremque laboriosam aliquam fuga corporis optio suscipit sequi qui fugiat alias repudiandae maiores labore temporibus aut ex rerum perferendis!</p>
+                        </div>
+                        <div>
+                            <small class="icon two">&nbsp;</small>
+                            <h5>TechNewbie</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, rem, itaque, doloremque laboriosam aliquam fuga corporis optio suscipit sequi qui fugiat alias repudiandae maiores labore temporibus aut ex rerum perferendis!</p>
+                        </div>
+                        <div>
+                            <small class="icon three">&nbsp;</small>
+                            <h5>TechNewbie</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, rem, itaque, doloremque laboriosam aliquam fuga corporis optio suscipit sequi qui fugiat alias repudiandae maiores labore temporibus aut ex rerum perferendis!</p>
+                        </div>
+                        <div>
+                            <small class="icon four">&nbsp;</small>
+                            <h5>TechNewbie</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, rem, itaque, doloremque laboriosam aliquam fuga corporis optio suscipit sequi qui fugiat alias repudiandae maiores labore temporibus aut ex rerum perferendis!</p>
+                        </div>
+                        <div>
+                            <small class="icon five">&nbsp;</small>
+                            <h5>TechNewbie</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, rem, itaque, doloremque laboriosam aliquam fuga corporis optio suscipit sequi qui fugiat alias repudiandae maiores labore temporibus aut ex rerum perferendis!</p>
+                        </div>
+                        <br class="clear">
+                    </div>
+                    <div class="bottom">
+                        <h4><b><small class="four">&nbsp;</small></b>Tourism<span><small>&nbsp;</small></span></h4>
+                        <div class="designs">
+                            <div class="design-left">
+                                <span class="d1 d">&nbsp;</span>
+                                <span class="d2 d">&nbsp;</span>
+                                <span class="d3 d">&nbsp;</span>
+                                <br class="clear" />
+                            </div>
+                            <div class="design-right">
+                                <span class="d1 d">&nbsp;</span>
+                                <span class="d2 d">&nbsp;</span>
+                                <span class="d3 d">&nbsp;</span>
+                                <span class="d4 d">&nbsp;</span>
+                                <br class="clear" />
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="five">
+                    <div class="top">
+                        <div class="designs">
+                            <div class="design-left">
+                                <span class="d1 d">&nbsp;</span>
+                                <span class="d2 d">&nbsp;</span>
+                                <span class="d3 d">&nbsp;</span>
+                                <br class="clear" />
+                            </div>
+                            <div class="design-right">
+                                <span class="d1 d">&nbsp;</span>
+                                <span class="d2 d">&nbsp;</span>
+                                <span class="d3 d">&nbsp;</span>
+                                <span class="d4 d">&nbsp;</span>
+                                <br class="clear" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content onebyfour">
+                        <div>
+                            <small class="icon one">&nbsp;</small>
+                            <h5>TechNewbie</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, rem, itaque, doloremque laboriosam aliquam fuga corporis optio suscipit sequi qui fugiat alias repudiandae maiores labore temporibus aut ex rerum perferendis!</p>
+                        </div>
+                        <div>
+                            <small class="icon two">&nbsp;</small>
+                            <h5>TechNewbie</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, rem, itaque, doloremque laboriosam aliquam fuga corporis optio suscipit sequi qui fugiat alias repudiandae maiores labore temporibus aut ex rerum perferendis!</p>
+                        </div>
+                        <div>
+                            <small class="icon three">&nbsp;</small>
+                            <h5>TechNewbie</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, rem, itaque, doloremque laboriosam aliquam fuga corporis optio suscipit sequi qui fugiat alias repudiandae maiores labore temporibus aut ex rerum perferendis!</p>
+                        </div>
+                        <div>
+                            <small class="icon four">&nbsp;</small>
+                            <h5>TechNewbie</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, rem, itaque, doloremque laboriosam aliquam fuga corporis optio suscipit sequi qui fugiat alias repudiandae maiores labore temporibus aut ex rerum perferendis!</p>
+                        </div>
+                        <div>
+                            <small class="icon five">&nbsp;</small>
+                            <h5>TechNewbie</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, rem, itaque, doloremque laboriosam aliquam fuga corporis optio suscipit sequi qui fugiat alias repudiandae maiores labore temporibus aut ex rerum perferendis!</p>
+                        </div>
+                        <div>
+                            <small class="icon six">&nbsp;</small>
+                            <h5>TechNewbie</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, rem, itaque, doloremque laboriosam aliquam fuga corporis optio suscipit sequi qui fugiat alias repudiandae maiores labore temporibus aut ex rerum perferendis!</p>
+                        </div>
+                        <div>
+                            <small class="icon seven">&nbsp;</small>
+                            <h5>TechNewbie</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, rem, itaque, doloremque laboriosam aliquam fuga corporis optio suscipit sequi qui fugiat alias repudiandae maiores labore temporibus aut ex rerum perferendis!</p>
+                        </div>
+                        <br class="clear">
+                    </div>
+                    <div class="bottom">
+                        <h4><b><small class="five">&nbsp;</small></b>Charity<span><small>&nbsp;</small></span></h4>
+                        <div class="designs">
+                            <div class="design-left">
+                                <span class="d1 d">&nbsp;</span>
+                                <span class="d2 d">&nbsp;</span>
+                                <span class="d3 d">&nbsp;</span>
+                                <br class="clear" />
+                            </div>
+                            <div class="design-right">
+                                <span class="d1 d">&nbsp;</span>
+                                <span class="d2 d">&nbsp;</span>
+                                <span class="d3 d">&nbsp;</span>
+                                <span class="d4 d">&nbsp;</span>
+                                <br class="clear" />
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </section>
+
+    <section id="part-of-femme">
+        <section class="wrapper">
+            <div class="head">
+                <h3>Become a Part of Femme</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam asperiores tenetur aliquid sit repellat, dolores eius quasi possimus ipsum explicabo cumque. Explicabo exercitationem dignissimos asperiores unde et est, expedita numquam?</p>
+            </div>
+            <ul class="logo">
+                <li>
+                    <h1><a href="index.html" title="Femme"><img src="{% static 'images/logo.png' %}" alt="image" title="Femme"/></a></h1>
+                </li>
+            </ul>
+            <ul class="first">
+                <li>
+                    <div class="top">
+                        <span class="icon1">&nbsp;</span>
+                    </div>
+                    <div class="bottom">
+                        <h5>Lorem Ipsum</h5>
+                    </div>
+                </li>
+                <li>
+                    <div class="top">
+                        <span class="icon2">&nbsp;</span>
+                    </div>
+                    <div class="bottom">
+                        <h5>Lorem Ipsum</h5>
+                    </div>
+                </li>
+            </ul>
+            <ul class="second">
+                <li>
+                    <div class="top">
+                        <span class="icon3">&nbsp;</span>
+                    </div>
+                    <div class="bottom">
+                        <h5>Lorem Ipsum</h5>
+                    </div>
+                </li>
+                <li>
+                    <div class="top">
+                        <span class="icon4">&nbsp;</span>
+                    </div>
+                    <div class="bottom">
+                        <h5>Lorem Ipsum</h5>
+                    </div>
+                </li>
+                <li>
+                    <div class="top">
+                        <span class="icon5">&nbsp;</span>
+                    </div>
+                    <div class="bottom">
+                        <h5>Lorem Ipsum</h5>
+                    </div>
+                </li>
+            </ul>
+            <br class="clear">
+        </section>
+    </section>
+
+    <section id="join">
+        <section class="wrapper">
+            <div class="head white">
+                <h3>Join</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam asperiores tenetur aliquid sit repellat, dolores eius quasi possimus ipsum explicabo cumque. Explicabo exercitationem dignissimos asperiores unde et est, expedita numquam?</p>
+            </div>
+            <form class="ajax reload" action="{% url 'web:registration' %}" method="post">
+                {% csrf_token %}
+    {#		complete with django			{{ form.as_p }}#}
+                <p class="first">
+                    <label for="{{ form.name.id_for_label }}">{{ form.name.label }}</label>
+                    {{ form.name }}
+                </p>
+                <p class="email">
+                    <label for="{{ form.email.id_for_label }}">{{ form.email.label }}</label>
+                    {{ form.email }}
+                </p>
+                <p class="phone">
+                    <label for="{{ form.phone.id_for_label }}">{{ form.phone.label }}</label>
+                    {{ form.phone }}
+                </p>
+                <p>
+                    <label for="{{ form.education.id_for_label }}">{{ form.education.label }}</label>
+                    {{ form.education }}
+                </p>
+                <p>
+                    <label for="{{ form.dob.id_for_label }}">{{ form.dob.label }}</label>
+                    {{ form.dob }}
+                </p>
+                <p class="last">
+                    <label for="{{ form.message.id_for_label }}">{{ form.message.label }}</label>
+                    {{ form.message }}
+                </p>
+                <br class="clear">
+                <input type="submit" class="submit" value="Submit" />
+            </form>
+        </section>
+    </section>
+{% endblock %}
+

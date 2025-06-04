@@ -1,0 +1,29 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% block content %}
+
+    <section id="text">
+        <section class="wrapper">
+            {% if text_instances %}
+                <ul>
+                    {% for text in text_instances %}
+                        <li>
+                            <div class="top">
+                                <div class="img">
+                                    <img src="{{ text.image.url }}" alt="" title="">
+                                </div>
+                            </div>
+                            <div class="bottom">
+                                <h3>{{ text.title }}</h3>
+                                <p>{{ text.content }}</p>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+                <br class="clear">
+            {% else %}
+                <p>No data found!</p>
+            {% endif %}
+        </section>
+    </section>
+{% endblock %}
