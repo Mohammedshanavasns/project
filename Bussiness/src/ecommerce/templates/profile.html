@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>User Profile</title>
+</head>
+<body>
+    <h2>Welcome, {{ profile.user.first_name }} {{ profile.user.last_name }}</h2>
+
+    <p><strong>Email:</strong> {{ profile.user.email }}</p>
+    <p><strong>Role:</strong> {{ profile.user.get_role_display }}</p>
+
+    <h3>Address</h3>
+    <p>{{ profile.address_line_1 }}, {{ profile.address_line_2 }}</p>
+    <p>{{ profile.district }}, {{ profile.state }}, {{ profile.country }}</p>
+
+    {% if profile.profile_image %}
+        <h3>Profile Image</h3>
+        <img src="{{ profile.profile_image.url }}" alt="Profile Image" width="150px">
+    {% else %}
+        <p>No profile image available.</p>
+    {% endif %}
+
+    <p><a href="{% url 'logout' %}">Logout</a></p>
+</body>
+</html>

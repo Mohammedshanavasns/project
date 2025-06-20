@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hi</title>
+</head>
+<body>
+   <h2>Product List</h2>
+
+{% for product in products %}
+    <div class="product">
+        <h3>{{ product.name }} ({{ product.product_type }})</h3>
+        <p><strong>Brand:</strong> {{ product.brand.name }}</p>
+        <p><strong>Category:</strong> {{ product.category.name }}</p>
+        <p><strong>Description:</strong> {{ product.description }}</p>
+        <p><strong>Price:</strong> ₹{{ product.price }}</p>
+        <p><strong>Stock:</strong> {{ product.stock_quantity }}</p>
+
+        <h4>Images:</h4>
+        {% for image in product.images.all %}
+            <img src="{{ image.image.url }}" alt="Image of {{ product.name }}" width="200px">
+        {% empty %}
+            <p>No images available.</p>
+        {% endfor %}
+    </div>
+    <hr>
+{% endfor %}
+
+
+</body>
+</html>
